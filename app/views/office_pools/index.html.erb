@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Office Pools</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @office_pools.each do |office_pool| %>
+      <tr>
+        <td><%= office_pool.name %></td>
+        <td><%= link_to 'Show', office_pool %></td>
+        <td><%= link_to 'Edit', edit_office_pool_path(office_pool) %></td>
+        <td><%= link_to 'Destroy', office_pool, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Office pool', new_office_pool_path %>
