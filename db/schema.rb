@@ -11,15 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160210161236) do
+ActiveRecord::Schema.define(version: 20160404181630) do
 
   create_table "employees", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
     t.integer  "office_pool_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "password_digest"
   end
+
+  add_index "employees", ["office_pool_id"], name: "index_employees_on_office_pool_id"
 
   create_table "friend_pools", force: :cascade do |t|
     t.string   "name"
@@ -31,9 +34,12 @@ ActiveRecord::Schema.define(version: 20160210161236) do
     t.string   "name"
     t.string   "email"
     t.integer  "friend_pool_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "password_digest"
   end
+
+  add_index "friends", ["friend_pool_id"], name: "index_friends_on_friend_pool_id"
 
   create_table "office_pools", force: :cascade do |t|
     t.string   "name"

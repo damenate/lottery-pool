@@ -1,3 +1,5 @@
 class FriendPool < ActiveRecord::Base
-  has_many: :friends
+  has_many :friends
+
+
 end

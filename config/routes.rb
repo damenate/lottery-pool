@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    resources :employees
+resources :friends
+resources :friend_pools
+resources :office_pools
+
+    root to: "employees#index"
+  end
+
   resources :employees
   resources :friends
   resources :friend_pools
