@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class FriendPoolDashboard < Administrate::BaseDashboard
+class PoolDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -45,10 +45,10 @@ class FriendPoolDashboard < Administrate::BaseDashboard
     :name,
   ]
 
-  # Overwrite this method to customize how friend pools are displayed
+  # Overwrite this method to customize how pools are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(friend_pool)
-  #   "FriendPool ##{friend_pool.id}"
+  # def display_resource(pool)
+  #   "Pool ##{pool.id}"
   # end
 end

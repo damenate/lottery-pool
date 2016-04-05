@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    resources :pools
+resources :users
+
+    root to: "pools#index"
+  end
+
   resources :pools
   resources :users
 
@@ -58,4 +65,3 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end
