@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :pools
+  resources :users
   namespace :admin do
     resources :employees
 resources :friends
@@ -8,10 +10,6 @@ resources :office_pools
     root to: "employees#index"
   end
 
-  resources :employees
-  resources :friends
-  resources :friend_pools
-  resources :office_pools
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

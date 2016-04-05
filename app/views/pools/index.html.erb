@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Pools</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pools.each do |pool| %>
+      <tr>
+        <td><%= pool.name %></td>
+        <td><%= link_to 'Show', pool %></td>
+        <td><%= link_to 'Edit', edit_pool_path(pool) %></td>
+        <td><%= link_to 'Destroy', pool, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pool', new_pool_path %>
