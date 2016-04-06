@@ -1,3 +1,3 @@
 class Pool < ActiveRecord::Base
-  has_many :friends
+  has_many :users
 end
